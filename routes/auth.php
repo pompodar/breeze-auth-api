@@ -14,6 +14,9 @@ Route::post('/register', [RegisteredUserController::class, 'store'])
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
                 ->name('login');
 
+Route::post('/login-with-google', [AuthenticatedSessionController::class, 'storeGoogle'])
+                ->name('login-with-google');
+
 Route::post('/forgot-password', [PasswordResetLinkController::class, 'store'])
                 ->middleware('guest')
                 ->name('password.email');
